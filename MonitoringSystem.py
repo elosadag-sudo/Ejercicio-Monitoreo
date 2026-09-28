@@ -87,9 +87,16 @@ def main():
     c_v, min_v, max_v, prom_v = calcular_resumen(voltajes)
     c_c, min_c, max_c, prom_c = calcular_resumen(corrientes)
 
-    # 3. Comprensión de listas: Transformar voltajes a milivoltios.
-    # Se hace en una sola línea, multiplicando la iteración por 1000.
-    voltajes_mv = [v * 1000 for v in voltajes]
+# 3. Comprensión de listas: Filtrar únicamente los valores críticos
+    temperaturas_altas = [t for t in temperaturas if t >= 30.0]
+    voltajes_altos = [v for v in voltajes if v > 3.40]
+    corrientes_altas = [c for c in corrientes if c > 1.30]
+
+    print("\nVALORES CRÍTICOS DETECTADOS (Comprensión de listas):")
+    print(f"Temperaturas >= 30.0 °C: {temperaturas_altas}")
+    print(f"Voltajes > 3.40 V: {voltajes_altos}")
+    print(f"Corrientes > 1.30 A: {corrientes_altas}")
+    print("-" * 40)
 
     # 4. Impresión del informe. Se formatea con 'f-strings' y limitando los decimales a 2 (.2f).
     print("\nResumen del Sistema\n")
