@@ -87,7 +87,7 @@ def main():
     c_v, min_v, max_v, prom_v = calcular_resumen(voltajes)
     c_c, min_c, max_c, prom_c = calcular_resumen(corrientes)
 
-# 3. Comprensión de listas: Filtrar únicamente los valores críticos
+    # 3. Comprensión de listas: Filtrar únicamente los valores críticos
     temperaturas_altas = [t for t in temperaturas if t >= 30.0]
     voltajes_altos = [v for v in voltajes if v > 3.40]
     corrientes_altas = [c for c in corrientes if c > 1.30]
